@@ -1,11 +1,11 @@
 <template>
-    <h1> Courses Page </h1>
-    <div>
-        <CourseFilter />
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-3"><CourseFilter /></div>
+            <div class="col-lg-9"><CourseList /></div>
+        </div>
     </div>
-    <div>
-        <CourseList />
-    </div>
+
 </template>
 
 
