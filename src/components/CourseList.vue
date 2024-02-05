@@ -1,9 +1,28 @@
 <template>
-    <h2> Courses Component </h2>
+    <div class="row my-5">
+        <div class="col-lg-3" v-for="course in courses">
+            <div class="card">
+                <img :src="course.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ course.name }}</h5>
+                    <p class="card-text">{{ course.category }}</p>
+                    <p class="card-text">{{ course.price }}$</p>
+                    <a href="#" class="btn btn-primary">Course Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script >
+    import { courses } from '../temp-data'
+
     export default {
-        name: 'CourseList'
+        name: 'CourseList',
+        data (){
+            return {
+                courses:courses
+            }
+        }
     }    
 </script>
