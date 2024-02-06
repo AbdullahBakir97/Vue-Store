@@ -2,8 +2,8 @@
   <h3> Courses Filter </h3>
   <form class="card">
 
-    <div class="flex align-items-center" v-for="cat in category" :key="cat.id">
-      <Checkbox v-model="selectedCategory" :inputId="cat.id" name="pizza" value="Cheese" />
+    <div class="flex align-items-center checkbox" v-for="cat in category" :key="cat.id">
+      <Checkbox v-model="selectedCategory" :inputId="cat.id" :name="cat.name" :value="cat.id" />
       <label :for="cat.id" class="ml-2"> {{cat.name}} </label>
     </div>
     
@@ -27,3 +27,11 @@
     }
   }    
 </script>
+
+<style>
+
+.checkbox{
+  margin:10px
+}
+
+</style>
