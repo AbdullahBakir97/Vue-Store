@@ -25,16 +25,12 @@
 </template>
 
 <script >
-import Card from 'primevue/card';
-    import { courses } from '../temp-data'
+
+    
 
     export default {
         name: 'CourseList',
-        data (){
-            return {
-                courses:courses
-            }
-        }
+        props: ['courses'],
     }    
 </script>
 
