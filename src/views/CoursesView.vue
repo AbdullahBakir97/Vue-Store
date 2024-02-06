@@ -1,8 +1,8 @@
 <template>
     <div class="container my-5">
         <div class="row">
-            <div class="col-lg-3"><CourseFilter /></div>
-            <div class="col-lg-9"><CourseList :courses="courses" /></div>
+            <div class="col-lg-3"><CourseFilter @filter="filtercourses"/></div>
+            <div class="col-lg-9"><CourseList :courses="filteredCourses" /></div>
         </div>
     </div>
 
@@ -23,7 +23,20 @@
         },
         data(){
             return {
-                courses:courses
+                courses:courses,
+                filteredCourses:courses
+            }
+        },
+        methods: {
+            filtercourses(selectedCategory){
+                if (selectedCategory.length == 0){
+                    this.filteredCourses = this.courses
+                }
+                else{
+                    this.filteredCourses = this.courses.filter(course => selectedCategory.includes(course.category_id ))
+                }
+
+                
             }
         }
         

@@ -24,6 +24,11 @@
         ],
         selectedCategory: []
       }
+    },
+    watch:{
+      selectedCategory(){
+        this.$emit('filter', this.selectedCategory)
+      }
     }
   }    
 </script>
